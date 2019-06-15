@@ -1,0 +1,18 @@
+Please note that these credentials are not permanent.
+
+Heroku rotates credentials periodically and updates applications where this database is attached.
+
+Host
+    ec2-54-243-150-10.compute-1.amazonaws.com
+Database
+    dvmjo6pvokn3v
+User
+    icknsevpzbardh
+Port
+    5432
+Password
+    5c195733c2d92181a25b5e73f8870c9b3788157e90380bcbdef013daa743644d
+URI
+    postgres://icknsevpzbardh:5c195733c2d92181a25b5e73f8870c9b3788157e90380bcbdef013daa743644d@ec2-54-243-150-10.compute-1.amazonaws.com:5432/dvmjo6pvokn3v
+Heroku CLI
+    heroku pg:psql postgresql-convex-82672 --app lance-chatroom

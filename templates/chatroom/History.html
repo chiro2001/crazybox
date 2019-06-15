@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{room}} - Chat History</title>
+</head>
+<body>
+<div style="OVERFLOW-Y: auto; OVERFLOW-X: auto; border:1px solid #AAA; position: absolute; z-index: 900; left: 85px; top: 35px; height: 552px; width: 847px;">
+    <ul>
+      {% for entry in entries %}
+      <li><span>{{ entry[0] }}</span><img src={{entry[3]}} style="width: 24px; height: 24px;"/><span style="color: blue">{{ entry[1] + ' ' + entry[2] }}</span><br>
+          <textarea readonly="" style="width: 580px; height: 60px;">{{ entry[4] }}</textarea></li>
+      {% endfor %}
+    </ul>
+</div>
+<a href="{{app_base}}/{{room}}">返回</a> <a href="{{pre_page}}">上一页</a> <a href="{{next_page}}">下一页</a>
+<form method="post">
+    跳转页数：<input type=text name=page> <input type=submit value="跳转">
+</form>
+</body>
+</html>

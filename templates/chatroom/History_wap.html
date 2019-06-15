@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{room}} - Chat History</title>
+</head>
+<body>
+<div>
+    <ul>
+      {% for entry in entries %}
+      <li><span>{{ entry[0] }}</span><span style="color: blue">{{ entry[1] + ' ' + entry[2] }}</span><br>
+          <p>{{ entry[4] }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+</div>
+<a href="{{app_base}}/{{room}}">返回</a> <a href="{{pre_page}}">上一页</a> <a href="{{next_page}}">下一页</a>
+<form method="post">
+    跳转页数：<input type=text name=page> <input type=submit value="跳转">
+</form>
+</body>
+</html>

@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>{{title}} - Chat Room</title>
+</head>
+<body id="">
+ <div style="border:1px solid #AAA; position: absolute; z-index: 900; left: 0px; top: 0px; height: 552px; width: 847px;">
+<div style="border:1px solid #AAA; position: absolute; z-index: 900; width: 161px; height: 244px; left: 680px; top: 6px;">
+ <img src={{ icon }} style="border:1px solid #AAA; position: absolute; z-index: 900; width: 142px; height: 142px; left: 8px; top: 8px;"/>
+ <p style="position: absolute; z-index: 900; left: 14px; top: 160px;">
+     我：{{ username }}<br>
+     <a href="https://cn.gravatar.com/">修改头像</a>
+     <a href="{{app_base}}/logout">注销</a>
+     <a href="{{app_base}}/history/{{room}}/0">历史记录</a>
+     <a href="{{app_base}}/about">关于</a>
+     <a href="{{app_base}}/wap">WAP手机站</a></p>
+</div>
+  <div style="border: 1px solid #AAA; position: absolute; width: 663px; height: 127px; left: 8px; top: 417px;">
+    <form action="" method="post" style="position: absolute; z-index: 900; left: 41px; top: 102px; width: 162px; height: 20px;">
+      <textarea name=message style="height: 73px; width: 638px; position: absolute; z-index: 900; left: -29px; top: -95px;"></textarea>
+        <input type=submit value="发送" style="width: 124px; height: 25px; position: absolute; z-index: 900; left: 480px; top: -6px;"/>
+    </form>
+</div>
+  <div style="border: 1px solid #AAA; position: absolute; z-index: 900; width: 161px; left: 680px; top: 258px; height: 286px;">
+<span>
+访问
+<a href="http://www.amazingcounters.com"><img border="0" src="http://cc.amazingcounters.com/counter.php?i=3227579&c=9683050" alt="AmazingCounters.com"></a>
+<br>
+成员
+</span>
+<div class="members" style="OVERFLOW-Y: auto; OVERFLOW-X: auto; border:1px solid #AAA; position: absolute; z-index: 900; width: 147px; height: 230px; left: 8px; top: 42px;">
+    <ul>
+        {% for user in users %}
+        <li><a href="{{app_base}}/get_email/{{user[0]}}">{{ user[0] }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+ </div>
+  <div class="title" style="OVERFLOW-Y: auto; OVERFLOW-X: auto; border:1px solid #AAA; position: absolute; z-index: 900; width: 663px; height: 32px; left: 8px; top: 8px;">
+   <span style="font-size: 24px; top: 97px;">{{ title }} </span>
+   <span style="font-size: 10px; color: #AAA;">这里下滑查看一言。</span>
+   <br>
+   <span id="hitokoto" style="font-size: 17px;"></span>
+   <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer=""></script>
+  </div>
+  <div class="mainWindow" style="OVERFLOW-Y: auto; OVERFLOW-X: auto; border:1px solid #AAA; position: absolute; z-index: 900; width: 663px; height: 363px; left: 8px; top: 48px;">
+      <ul>
+          {% for entry in entries %}
+          <li><img src={{entry[3]}} style="width: 24px; height: 24px;"/><span style="color: blue">{{ entry[1] + ' ' + entry[2] }}</span><br>
+	<textarea readonly="" style="width: 580px;" rows={{entry[-1]}}>{{ entry[4] }}</textarea>
+			  <!--<div>{{ entry[4] }}</div>-->
+		  </li>
+				
+          {% endfor %}
+      </ul>
+  </div>
+</div>
+<script src="https://unpkg.com/live2d-widget@3.0.5/lib/L2Dwidget.min.js"></script>
+  <script type="text/javascript">
+    L2Dwidget.init();
+  </script>
+ </body>
+</html>

@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>{{title}} - Chat Room WAP</title>
+</head>
+<div class="title">
+   <span>房间:{{title}}</span>
+</div>
+<body id="">
+ <div>
+  <div>
+    <form action="" method="post">
+        <input type=text name=message>
+        <input type=submit value="发送"/>
+    </form>
+</div>
+  <div>
+<span>
+</span>
+ </div>
+  <div class="mainWindow">
+      <ul>
+          {% for entry in entries %}
+          <li><span style="color: blue">{{ entry[1] + ' ' + entry[2] }}</span><br>
+	<p>{{ entry[4] }}</p>
+			  <!--<div>{{ entry[4] }}</div>-->
+		  </li>
+
+          {% endfor %}
+      </ul>
+  </div>
+</div>
+ <div>
+ <img src={{ icon }}/>
+ <p>
+     我：{{ username }}<br>
+     <a href="https://cn.gravatar.com/">修改头像</a>
+     <a href="{{app_base}}/logout">注销</a>
+     <a href="{{app_base}}/history/{{room}}/0">历史记录</a>
+     <a href="{{app_base}}/about">关于</a>
+    <a href="{{app_base}}/pc">电脑版</a></p>
+</div>
+成员
+ <div class="members">
+    <ul>
+        {% for user in users %}
+        <li><a href="{{app_base}}/get_email/{{user[0]}}">{{ user[0] }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+<br>
+<span id="hitokoto"></span>
+ <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer=""></script>
+ </body>
+</html>
