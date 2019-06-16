@@ -22,12 +22,12 @@ def get_if_in(key: str, form: dict, default=None):
 
 
 @app.route(_app_base + '/', methods=['GET'])
-def index():
+def go_index():
     return '<a href="https://github.com/LanceLiang2018/Go-Online">https://github.com/LanceLiang2018/Go-Online</a>'
 
 
 @app.route(_app_base + '/play/<string:code>/', methods=['POST', 'GET'])
-def play(code: str):
+def go_play(code: str):
     if request.method == 'GET':
         return jsonify(db.read(code))
     # POST 部分
@@ -58,12 +58,12 @@ def play(code: str):
 
 
 @app.route(_app_base + '/playing/<string:code>/', methods=['GET'])
-def playing(code: str):
+def go_playing(code: str):
     return db.read(code)['data']
 
 
 @app.route(_app_base + '/debug_clear')
-def clear():
+def go_clear():
     db.db_init()
     return db.make_result(0)
 
