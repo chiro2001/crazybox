@@ -8,3 +8,4 @@ tqdm
 bs4
 lxml
 six
+markdown

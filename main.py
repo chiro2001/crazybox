@@ -1,6 +1,7 @@
 from flask import *
 import os
 import myapp
+import markdown
 
 myapp.init()
 app = myapp.get_app()
@@ -13,7 +14,9 @@ from go import *
 
 @app.route('/')
 def crazybox_index():
-    return 'Index'
+    with open('README.md', encoding='utf8') as f:
+        data = markdown.markdown(f.read())
+        return data
 
 
 if __name__ == '__main__':
