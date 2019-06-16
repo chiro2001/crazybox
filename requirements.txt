@@ -6,3 +6,5 @@ pytz
 colorlog
 tqdm
 bs4
+lxml
+six
