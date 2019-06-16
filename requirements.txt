@@ -5,3 +5,4 @@ cos-python-sdk-v5
 pytz
 colorlog
 tqdm
+bs4
