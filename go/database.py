@@ -48,11 +48,11 @@ class DataBase:
             self.conn = sql.connect('data_sql.db', check_same_thread=False)
         else:
             import psycopg2 as sql
-            self.conn = sql.connect(host='ec2-50-17-246-114.compute-1.amazonaws.com',
-                                    database='de5kjan1c7bsh8',
-                                    user='fhvsqdrzvqgsww',
+            self.conn = sql.connect(host='ec2-23-21-160-38.compute-1.amazonaws.com',
+                                    database='d6bagosv2bo9p8',
+                                    user='dtzixfehvkttfq',
                                     port='5432',
-                                    password='2fe833a144e72ffd656e1adc4ea49ad0571d329ecfa83c51c03c187df0b35152')
+                                    password='55e46bbde1772cb32715d4f52f51ad847ba3fe5af88902161336d56eb6c8a3c5')
 
     def cursor_get(self):
         cursor = self.conn.cursor()
